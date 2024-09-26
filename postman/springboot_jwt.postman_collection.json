@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "548774df-149b-4a57-bb4f-a8baa82ecd63",
+		"name": "springboot_jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23889913"
+	},
+	"item": [
+		{
+			"name": "public home page ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:12600/api/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12600",
+					"path": [
+						"api",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"johnwink\",\r\n  \"password\": \"securePassword1234\",\r\n  \"email\": \"johnwink@example.com\",\r\n  \"role\": [\r\n      \"ROLE_USER\"\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:12600/registration/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12600",
+					"path": [
+						"registration",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Home Page",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2hud2luayIsIkF1dGhvcml0aWVzIjoiW1JPTEVfVVNFUl0iLCJpc0FjdGl2ZSI6InRydWUiLCJlbWFpbCI6ImpvaG53aW5rQGV4YW1wbGUuY29tIiwiZXhwRGF0ZSI6IjIwMzEtMDktMjdUMDA6MDM6NDQuMDk5MDU5IiwiaXNzIjoiaHR0cHM6Ly9wcml2YXRlLmF1dGgtc2VydmVyLmNvbSIsInBob25lTnVtYmVyIjoiKDMwMikgMTA3LTAwMjkgeDI2OCIsInVzZXJJZGVudGlmaWVyIjoiMzM1ZDIxOWMtMzNjMC00ZDJhLTliZWEtMWVkMTU5MWQzMWZlIiwiYWRkcmVzcyI6IjMwMDMgUnVub2xmc2RvdHRpciBSaWRnZXMsIEJyaXR0bW91dGgsIElMIDIzNTQyIiwiaWF0IjoxNzI3Mzc1NjM2LCJleHAiOjE3MjczNzYyMzZ9.FUfUTyNzymdACLPelTEMXFO4jhu7Farw7tDc6FBCa-n1sIPkubJoVvxGHODgQQic1M41lO9RGqBAd_Dfd_6C0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:12600/api/home/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12600",
+					"path": [
+						"api",
+						"home",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate User and Get JWT",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"johnwink\",\r\n    \"password\": \"securePassword1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:12600/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12600",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Secret Key",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:12600/secret-key",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12600",
+					"path": [
+						"secret-key"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
